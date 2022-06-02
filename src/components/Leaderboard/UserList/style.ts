@@ -1,17 +1,22 @@
 import styled from 'styled-components';
 
 const UserBlock = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 5% 5% 5% 15% 50% 15% 5%;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 0 10px;
+  padding: 0 20px 10px 20px;
   font-size: 0.9rem;
-`;
-
-const StyledBlock = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: clamp(130px, 30%, 230px);
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 8% 8% 8% 18% 32% 18% 8%;
+  }
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 10% 10% 10% 20% 20% 20% 10%;
+    padding: 0 10px 10px 10px;
+  }
+  @media screen and (max-width: 425px) {
+    grid-template-columns: 13% 10% 13% 23% 0 30% 10%;
+    padding: 0 10px 10px 10px;
+  }
 `;
 
 const Place = styled.span`
@@ -46,14 +51,4 @@ const Arrow = styled.span`
 
 const EditButton = styled.img``;
 
-export {
-  UserBlock,
-  StyledBlock,
-  Place,
-  ProfilePicture,
-  Score,
-  NickName,
-  ScoreChange,
-  Arrow,
-  EditButton
-};
+export { UserBlock, Place, ProfilePicture, Score, NickName, ScoreChange, Arrow, EditButton };

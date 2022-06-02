@@ -3,8 +3,21 @@ import styled from 'styled-components';
 const blackColor = '#171616';
 const backgroundColor = '#e3e3e3';
 
+const ModalBackground = styled.div<{
+  showModal: boolean;
+}>`
+  position: absolute;
+  display: ${(props) => (props.showModal ? 'block' : 'none')};
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(33, 33, 33, 0.5);
+`;
+
 const StyledModalWindow = styled.div`
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   border: ${blackColor} solid 2px;
@@ -57,4 +70,12 @@ const AddUserButton = styled.button`
   background-color: ${backgroundColor};
 `;
 
-export { StyledModalWindow, CloseButton, ModalTitle, AddUserForm, AddUserInput, AddUserButton };
+export {
+  StyledModalWindow,
+  ModalBackground,
+  CloseButton,
+  ModalTitle,
+  AddUserForm,
+  AddUserInput,
+  AddUserButton
+};

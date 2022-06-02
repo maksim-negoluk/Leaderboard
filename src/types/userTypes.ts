@@ -1,10 +1,21 @@
-interface User {
+interface IUser {
+  id: string;
   nickname: string;
   score: number;
 }
 
-interface UserList {
-  userList: User[];
+interface IUserList {
+  userList: IUser[];
 }
 
-export type { User, UserList };
+interface IConfiguration {
+  modalConfiguration: IModalConfiguration;
+}
+
+interface IModalConfiguration {
+  showModal: boolean;
+  modalText: string;
+  currentUserId?: string;
+}
+
+export type { IUser, IUserList, IConfiguration };
