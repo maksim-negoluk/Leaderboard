@@ -1,0 +1,60 @@
+import styled from 'styled-components';
+
+const blackColor = '#171616';
+const backgroundColor = '#e3e3e3';
+
+const StyledModalWindow = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: ${blackColor} solid 2px;
+  border-radius: 10px;
+  width: clamp(250px, 60%, 600px);
+  background-color: ${backgroundColor};
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  color: ${blackColor};
+  font-weight: bold;
+`;
+
+const ModalTitle = styled.h2`
+  padding: 30px 0 20px 0;
+  margin: 0 auto;
+`;
+
+const AddUserForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 50px 0;
+  & * {
+    border: ${blackColor} solid 2px;
+    box-shadow: 3px 3px ${blackColor};
+    color: ${blackColor};
+    font-weight: bold;
+  }
+`;
+
+const AddUserInput = styled.input`
+  padding: 2px 5px;
+  margin: 0 0 10px 0;
+`;
+
+const AddUserButton = styled.button`
+  padding: 5px 20px;
+  background-color: ${backgroundColor};
+`;
+
+export { StyledModalWindow, CloseButton, ModalTitle, AddUserForm, AddUserInput, AddUserButton };
