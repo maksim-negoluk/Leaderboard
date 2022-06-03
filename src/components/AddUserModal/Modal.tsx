@@ -15,7 +15,7 @@ import {
 } from './style';
 
 const Modal = () => {
-  const [nickname, setNickname] = useState('');
+  const [name, setName] = useState('');
   const [score, setScore] = useState(0);
   const ModalConfiguration = useSelector(
     (state: RootState) => state.configuration.modalConfiguration
@@ -27,7 +27,7 @@ const Modal = () => {
   };
 
   const handleNicknameChange = (event: FormEvent<HTMLInputElement>) => {
-    setNickname(event.currentTarget.value);
+    setName(event.currentTarget.value);
   };
 
   const handleScoreChange = (event: FormEvent<HTMLInputElement>) => {
@@ -38,9 +38,9 @@ const Modal = () => {
   const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (ModalConfiguration.currentUserId) {
-      dispatch(EditUser({ nickname, score, id: ModalConfiguration.currentUserId }));
-    } else dispatch(AddUser({ nickname, score, id: nanoid() }));
-    setNickname('');
+      dispatch(EditUser({ name, score, id: ModalConfiguration.currentUserId }));
+    } else dispatch(AddUser({ name, score, id: nanoid() }));
+    setName('');
     setScore(0);
   };
 
@@ -55,7 +55,7 @@ const Modal = () => {
           <AddUserInput
             type="text"
             placeholder="nickname"
-            value={nickname}
+            value={name}
             onChange={handleNicknameChange}
           />
           <AddUserInput

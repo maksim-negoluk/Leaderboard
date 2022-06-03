@@ -1,8 +1,13 @@
 interface IUser {
   id: string;
-  nickname: string;
+  name: string;
   score: number;
   previousScore: number | null;
+}
+
+interface IFetchedUser {
+  name: string;
+  score?: number;
 }
 
 interface IUserList {
@@ -20,4 +25,4 @@ interface IModalConfiguration {
 
 type IUserPayload = Omit<IUser, 'previousScore'>;
 
-export type { IUser, IUserList, IConfiguration, IUserPayload };
+export type { IUser, IUserList, IConfiguration, IUserPayload, IFetchedUser };

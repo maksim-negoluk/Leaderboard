@@ -8,10 +8,10 @@ import GlobalStyles from './globalStyles';
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <GlobalStyles />
-      <App />
-    </Provider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <Provider store={store}>
+    <GlobalStyles />
+    <App />
+  </Provider>
+  // </React.StrictMode>
 );

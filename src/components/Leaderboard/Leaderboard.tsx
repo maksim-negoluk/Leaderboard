@@ -17,7 +17,7 @@ const Leaderboard = () => {
           .map((user: IUser, index) => (
             <User
               place={convertNumberToPlace(index + 1)}
-              nickname={user.nickname}
+              nickname={user.name}
               score={user.score}
               key={user.id}
               userId={user.id}

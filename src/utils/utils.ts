@@ -1,3 +1,5 @@
+import { IFetchedUser } from '../types/userTypes';
+
 const convertNumberToPlace = (number: number): string => {
   if (number === 1) return '1st';
   if (number === 2) return '2nd';
@@ -18,4 +20,12 @@ const definePositionShift = (
   return ascending ? shift : -shift;
 };
 
-export { convertNumberToPlace, definePositionShift };
+const makeRequest = async (link: string): Promise<Array<IFetchedUser>> => {
+  const response = await fetch(link);
+  if (response.ok) {
+    return response.json();
+  }
+  return makeRequest(link);
+};
+
+export { convertNumberToPlace, definePositionShift, makeRequest };

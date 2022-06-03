@@ -26,7 +26,7 @@ const RecordHoldersBlock = () => {
               <ProfilePicture>
                 <Score>{user.score}</Score>
               </ProfilePicture>
-              <NickName>{user.nickname}</NickName>
+              <NickName>{user.name}</NickName>
             </UserBlock>
           ))}
       </RecordHoldersList>
