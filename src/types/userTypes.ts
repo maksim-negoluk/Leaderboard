@@ -2,6 +2,7 @@ interface IUser {
   id: string;
   nickname: string;
   score: number;
+  previousScore: number | null;
 }
 
 interface IUserList {
@@ -14,8 +15,9 @@ interface IConfiguration {
 
 interface IModalConfiguration {
   showModal: boolean;
-  modalText: string;
   currentUserId?: string;
 }
 
-export type { IUser, IUserList, IConfiguration };
+type IUserPayload = Omit<IUser, 'previousScore'>;
+
+export type { IUser, IUserList, IConfiguration, IUserPayload };

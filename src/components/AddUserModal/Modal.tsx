@@ -23,9 +23,7 @@ const Modal = () => {
   const dispatch = useDispatch();
 
   const closeModal = () => {
-    dispatch(
-      ToggleModal({ modalConfiguration: { modalText: '', showModal: false, currentUserId: '' } })
-    );
+    dispatch(ToggleModal({ modalConfiguration: { showModal: false, currentUserId: '' } }));
   };
 
   const handleNicknameChange = (event: FormEvent<HTMLInputElement>) => {
@@ -52,7 +50,7 @@ const Modal = () => {
         <CloseButton name="close" type="button" onClick={closeModal}>
           x
         </CloseButton>
-        <ModalTitle>{ModalConfiguration.modalText}</ModalTitle>
+        <ModalTitle>{ModalConfiguration.currentUserId ? 'Edit user' : 'Add new user'}</ModalTitle>
         <AddUserForm method="GET" onSubmit={handleFormSubmit}>
           <AddUserInput
             type="text"

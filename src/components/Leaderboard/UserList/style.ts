@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+const newUserColor = `#565656`;
+const samePlaceColor = `#e3ba12`;
+const higherPlaceColor = `#61e81d`;
+const lowerPlaceColor = `#ec2727`;
+
 const UserBlock = styled.div`
   display: grid;
   grid-template-columns: 5% 5% 5% 15% 50% 15% 5%;
@@ -36,17 +41,33 @@ const Score = styled.span`
 
 const NickName = styled.span``;
 
-const ScoreChange = styled.span`
-  color: #e5bf29;
+const ScoreChange = styled.span<{ positionShift: string }>`
+  display: flex;
+  align-items: center;
+  ${({ positionShift }) => {
+    if (positionShift === 'same') return `color: ${samePlaceColor}`;
+    if (positionShift === 'descending') return `color: ${lowerPlaceColor}`;
+    if (positionShift === 'ascending') return `color: ${higherPlaceColor}`;
+    return `color: ${newUserColor}`;
+  }}
 `;
 
-const Arrow = styled.span`
+const Arrow = styled.span<{ positionShift: string }>`
   display: inline-block;
   width: 0;
   height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 5px solid #e5bf29;
+  margin: 0 3px 0 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  ${({ positionShift }) => {
+    if (positionShift === 'same')
+      return `border-bottom: 4px solid ${samePlaceColor}; transform: rotate(90deg);`;
+    if (positionShift === 'descending')
+      return `border-bottom: 4px solid ${lowerPlaceColor}; transform: rotate(180deg);`;
+    if (positionShift === 'ascending')
+      return `border-bottom: 4px solid ${higherPlaceColor}; transform: rotate(0deg);`;
+    return `border-bottom: 4px solid ${newUserColor}; transform: rotate(90deg);`;
+  }}
 `;
 
 const EditButton = styled.img``;

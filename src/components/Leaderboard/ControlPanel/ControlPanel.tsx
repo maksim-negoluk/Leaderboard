@@ -12,7 +12,7 @@ import { ToggleModal } from '../../../store/configurationSlice';
 const ControlPanel = () => {
   const dispatch = useDispatch();
   const openModal = () => {
-    dispatch(ToggleModal({ modalConfiguration: { modalText: 'Add new user', showModal: true } }));
+    dispatch(ToggleModal({ modalConfiguration: { showModal: true } }));
   };
   return (
     <StyledControlPanel>

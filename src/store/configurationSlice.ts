@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IConfiguration } from '../types/userTypes';
 
 const initialState: IConfiguration = {
-  modalConfiguration: { showModal: false, modalText: '', currentUserId: '' }
+  modalConfiguration: { showModal: false, currentUserId: '' }
 };
 
 const configurationSlice = createSlice({
@@ -11,7 +11,6 @@ const configurationSlice = createSlice({
   reducers: {
     ToggleModal(state, action: PayloadAction<IConfiguration>) {
       state.modalConfiguration.showModal = action.payload.modalConfiguration.showModal;
-      state.modalConfiguration.modalText = action.payload.modalConfiguration.modalText;
       if (action.payload.modalConfiguration.currentUserId !== '')
         state.modalConfiguration.currentUserId = action.payload.modalConfiguration.currentUserId;
     }
