@@ -22,7 +22,7 @@ const Leaderboard = () => {
               key={user.id}
               userId={user.id}
               positionShift={
-                user.previousScore
+                user.previousScore !== null
                   ? `${definePositionShift(
                       [...users].map((userValue) => userValue.score),
                       user.score,

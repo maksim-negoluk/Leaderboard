@@ -65,6 +65,15 @@ const AddUserInput = styled.input`
   margin: 0 0 10px 0;
 `;
 
+const ErrorMessage = styled.div<{ IsFormValid: boolean }>`
+  ${({ IsFormValid }) => (IsFormValid ? 'display: none;' : 'display: block;')}
+  border: none;
+  box-shadow: none;
+  color: #e72d2d;
+  font-size: 0.9rem;
+  font-weight: normal;
+`;
+
 const AddUserButton = styled.button`
   padding: 5px 20px;
   background-color: ${backgroundColor};
@@ -77,5 +86,6 @@ export {
   ModalTitle,
   AddUserForm,
   AddUserInput,
+  ErrorMessage,
   AddUserButton
 };
