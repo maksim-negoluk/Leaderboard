@@ -1,9 +1,9 @@
 import { FormEvent, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import { RootState } from '../../store/store';
+import { RootDispatch, RootState } from '../../store/store';
 import { ToggleModal } from '../../store/configurationSlice';
-import { AddUser, EditUser } from '../../store/leaderboardSlice';
+import { EditUser, fetchUserNickname } from '../../store/leaderboardSlice';
 import {
   ModalBackground,
   StyledModalWindow,
@@ -20,7 +20,7 @@ const Modal = () => {
   const ModalConfiguration = useSelector(
     (state: RootState) => state.configuration.modalConfiguration
   );
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<RootDispatch>();
 
   const closeModal = () => {
     dispatch(ToggleModal({ modalConfiguration: { showModal: false, currentUserId: '' } }));
@@ -35,11 +35,13 @@ const Modal = () => {
     setScore(Number(event.currentTarget.value));
   };
 
-  const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (ModalConfiguration.currentUserId) {
-      dispatch(EditUser({ name, score, id: ModalConfiguration.currentUserId }));
-    } else dispatch(AddUser({ name, score, id: nanoid() }));
+      await dispatch(EditUser({ name, score, id: ModalConfiguration.currentUserId }));
+    } else {
+      await dispatch(fetchUserNickname({ id: nanoid(), score, name }));
+    }
     setName('');
     setScore(0);
   };

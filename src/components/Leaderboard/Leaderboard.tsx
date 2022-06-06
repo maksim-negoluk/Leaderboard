@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { StyledLeaderboard, StyledBlock } from './style';
 import User from './UserList/User';
 import ControlPanel from './ControlPanel/ControlPanel';
-import { convertNumberToPlace, definePositionShift } from '../../utils/utils';
+import { convertNumberToPlace, definePositionShift } from '../../utils/leaderboardUtils';
 import { RootState } from '../../store/store';
 import { IUser } from '../../types/userTypes';
 

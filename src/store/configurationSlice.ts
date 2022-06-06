@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IConfiguration } from '../types/userTypes';
+import { IConfiguration } from '../types/configurationTypes';
 
 const initialState: IConfiguration = {
   modalConfiguration: { showModal: false, currentUserId: '' }

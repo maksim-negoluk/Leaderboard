@@ -11,7 +11,7 @@ const App = () => {
   const dispatch = useDispatch<RootDispatch>();
 
   useEffect(() => {
-    dispatch(fetchInitialState()).unwrap();
+    dispatch(fetchInitialState());
   });
 
   return (
