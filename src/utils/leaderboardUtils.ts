@@ -10,8 +10,8 @@ const definePositionShift = (
   currentValue: number,
   previousValue: number
 ): number => {
+  if (!previousValue) previousValue = 0;
   let ascending = false;
-  if (previousValue === currentValue) return 0;
   if (previousValue < currentValue)
     [previousValue, currentValue, ascending] = [currentValue, previousValue, true];
   const shift = array.filter((element) => element > currentValue && element < previousValue).length;

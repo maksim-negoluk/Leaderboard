@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { RootDispatch, RootState } from '../../store/store';
 import { ToggleModal } from '../../store/configurationSlice';
-import { EditUser, fetchUserNickname } from '../../store/leaderboardSlice';
+import { EditUser, fetchUserNickname, UpdateHistory } from '../../store/leaderboardSlice';
 import {
   ModalBackground,
   StyledModalWindow,
@@ -20,6 +20,7 @@ const Modal = () => {
   const ModalConfiguration = useSelector(
     (state: RootState) => state.configuration.modalConfiguration
   );
+
   const dispatch = useDispatch<RootDispatch>();
 
   const closeModal = () => {
@@ -42,6 +43,7 @@ const Modal = () => {
     } else {
       await dispatch(fetchUserNickname({ id: nanoid(), score, name }));
     }
+    dispatch(UpdateHistory());
     setName('');
     setScore(0);
   };

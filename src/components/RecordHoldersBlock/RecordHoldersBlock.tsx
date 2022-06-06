@@ -8,12 +8,11 @@ import {
   UserBlock,
   ProfilePicture,
   Score,
-  NickName,
-  Logo
+  NickName
 } from './style';
 
 const RecordHoldersBlock = () => {
-  const users: IUser[] = useSelector((state: RootState) => state.leaderboard.userList);
+  const users: IUser[] = useSelector((state: RootState) => state.leaderboard.currentUserList);
   return (
     <StyledBlock>
       <Title>All time highest scores</Title>
@@ -30,7 +29,6 @@ const RecordHoldersBlock = () => {
             </UserBlock>
           ))}
       </RecordHoldersList>
-      <Logo src="#" alt="logo" />
     </StyledBlock>
   );
 };

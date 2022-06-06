@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+const logo = require(`../../static/people.svg`).default;
+
 const StyledBlock = styled.div`
   position: relative;
   box-sizing: border-box;
@@ -7,8 +9,14 @@ const StyledBlock = styled.div`
   padding: 10px 20px;
   margin: 0 0 20px 0;
   width: 90%;
-  background-color: #7d1ecd;
+  background: url(${logo}), #7d1ecd;
+  background-size: clamp(150px, 25%, 300px), 100%;
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
   color: white;
+  @media screen and (max-width: 450px) {
+    background: #7d1ecd;
+  }
   @media screen and (max-width: 375px) {
     display: flex;
     flex-direction: column;
@@ -59,16 +67,4 @@ const NickName = styled.span`
   font-size: 0.8rem;
 `;
 
-const Logo = styled.img`
-  position: absolute;
-  top: 50%;
-  right: 10%;
-  @media screen and (max-width: 376px) {
-    position: relative;
-    width: 100%;
-    top: 0;
-    right: 0;
-  }
-`;
-
-export { StyledBlock, Title, RecordHoldersList, UserBlock, ProfilePicture, Score, NickName, Logo };
+export { StyledBlock, Title, RecordHoldersList, UserBlock, ProfilePicture, Score, NickName };

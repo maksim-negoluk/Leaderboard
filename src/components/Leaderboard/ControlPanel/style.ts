@@ -23,10 +23,10 @@ const ButtonsBlock = styled.div`
     margin: 0 5px;
   }
 `;
-const HistoryNavigationButton = styled.button`
+const HistoryNavigationButton = styled.button<{ inactive?: boolean }>`
   border: none;
   background-color: rgba(0, 0, 0, 0);
-  color: #151414;
+  ${({ inactive }) => (inactive ? 'color: #727272;' : 'color: #151414;')}
   font-weight: bold;
 `;
 const NewDayButton = styled.button`

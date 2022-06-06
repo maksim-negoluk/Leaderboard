@@ -7,7 +7,7 @@ import { RootState } from '../../store/store';
 import { IUser } from '../../types/userTypes';
 
 const Leaderboard = () => {
-  const users = useSelector((state: RootState) => state.leaderboard.userList);
+  const users = useSelector((state: RootState) => state.leaderboard.currentUserList);
   return (
     <StyledBlock>
       <ControlPanel />
