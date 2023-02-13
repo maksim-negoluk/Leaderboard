@@ -8,17 +8,21 @@ const getUserNicknameURL = 'http://coding-test.cube19.io/frontend/v1/process-use
 
 const fetchInitialState = createAsyncThunk(
   'leaderboard/fetchInitialState',
-  async (): Promise<IUser[]> => makeRequest(getInitialStateURL)
+  async (): Promise<IUser[]> => makeRequest(getInitialStateURL, {}, 'initialUsers')
 );
 
 const fetchUserNickname = createAsyncThunk(
   'leaderboard/fetchUserNickname',
   async (user: IUserPayload): Promise<IUser> => {
-    const response: IFetchedUserNickname = await makeRequest(getUserNicknameURL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username: `${user.name}` })
-    });
+    const response: IFetchedUserNickname = await makeRequest(
+      getUserNicknameURL,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: `${user.name}` })
+      },
+      'userName'
+    );
     return {
       id: user.id,
       name: response['display-name'],
