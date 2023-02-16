@@ -28,6 +28,10 @@ const HistoryNavigationButton = styled.button<{ inactive?: boolean }>`
   background-color: rgba(0, 0, 0, 0);
   ${({ inactive }) => (inactive ? 'color: #d2d2d2;' : 'color: #151414;')}
   font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const NewDayButton = styled.button`
   border: none;
@@ -36,6 +40,12 @@ const NewDayButton = styled.button`
   background-color: #cd671e;
   color: #eee8e8;
   font-size: clamp(0.8rem, 3vw, 1rem);
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #E86F18;
+  }
 `;
 const AddUserButton = styled.button`
   border: none;
@@ -44,8 +54,14 @@ const AddUserButton = styled.button`
   background-color: #7d1ecd;
   color: #eee8e8;
   font-size: clamp(0.8rem, 3vw, 1rem);
+  transition: 0.3s;
   @media screen and (max-width: 426px) {
     padding: 4px 8px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #A94CF7;
   }
 `;
 
