@@ -70,6 +70,10 @@ const Arrow = styled.span<{ positionShift: string }>`
   }}
 `;
 
-const EditButton = styled.img``;
+const EditButton = styled.img`
+&:hover {
+  cursor: pointer;
+}
+`;
 
 export { UserBlock, Place, ProfilePicture, Score, NickName, ScoreChange, Arrow, EditButton };
