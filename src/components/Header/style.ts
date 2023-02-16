@@ -18,7 +18,7 @@ const LeaderboardLogo = styled.h2`
    flex-grow: 9;
 `
 
-const LeaderboardPageLink = styled.a`
+const HeaderLink = styled.a`
    font-size: 16px;
    text-align: right;
    flex-grow: 1;
@@ -30,16 +30,4 @@ const LeaderboardPageLink = styled.a`
    }
 `
 
-const HomePageLink = styled.a`
-   font-size: 16px;
-   text-align: right;
-   flex-grow: 1;
-   transition: 0.3s;
-
-   &:hover {
-      cursor: pointer;
-      color: #dce0dd;
-   }
-`
-
-export { HeaderBlock, LeaderboardLogo, LeaderboardPageLink, HomePageLink }
+export { HeaderBlock, LeaderboardLogo, HeaderLink }
