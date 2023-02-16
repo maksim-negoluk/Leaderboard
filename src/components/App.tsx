@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchInitialState } from '../store/leaderboardSlice';
 import Wrapper from './styles';
+import Header from './Header/header'
 import Leaderboard from './Leaderboard/Leaderboard';
 import RecordHoldersBlock from './RecordHoldersBlock/RecordHoldersBlock';
 import Modal from './AddUserModal/Modal';
@@ -16,10 +17,10 @@ const App = () => {
 
   return (
     <Wrapper>
-      <h2>Leaderboard</h2>
-      <RecordHoldersBlock />
+      <Header />
+      {/* <RecordHoldersBlock />
       <Leaderboard />
-      <Modal />
+      <Modal /> */}
     </Wrapper>
   );
 };
