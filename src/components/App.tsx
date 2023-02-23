@@ -7,6 +7,7 @@ import Leaderboard from './Leaderboard/Leaderboard';
 import RecordHoldersBlock from './RecordHoldersBlock/RecordHoldersBlock';
 import Modal from './AddUserModal/Modal';
 import { RootDispatch } from '../store/store';
+import WelcomePage from './WelcomePage/WelcomePage';
 
 const App = () => {
   const dispatch = useDispatch<RootDispatch>();
@@ -18,6 +19,7 @@ const App = () => {
   return (
     <Wrapper>
       <Header />
+      <WelcomePage />
       {/* <RecordHoldersBlock />
       <Leaderboard />
       <Modal /> */}
