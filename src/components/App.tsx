@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { fetchInitialState } from '../store/leaderboardSlice';
 import Wrapper from './styles';
 import Header from './Header/header'
@@ -19,10 +20,11 @@ const App = () => {
   return (
     <Wrapper>
       <Header />
-      <WelcomePage />
-      {/* <RecordHoldersBlock />
-      <Leaderboard />
-      <Modal /> */}
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" replace />} />
+        <Route path="/home" element={<WelcomePage />} />
+        <Route path="/leaderboard" element={<><RecordHoldersBlock /><Leaderboard /><Modal /></>} />
+      </Routes>
     </Wrapper>
   );
 };

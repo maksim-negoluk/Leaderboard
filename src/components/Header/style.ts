@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const HeaderBlock = styled.div`
    box-sizing: border-box;
@@ -18,9 +19,11 @@ const LeaderboardLogo = styled.h2`
    flex-grow: 9;
 `
 
-const HeaderLink = styled.a`
+const HeaderLink = styled(Link)`
    font-size: 16px;
    text-align: right;
+   color: white;
+   text-decoration: none;
    flex-grow: 1;
    transition: 0.3s;
 
