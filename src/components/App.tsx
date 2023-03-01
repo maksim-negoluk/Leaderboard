@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { fetchInitialState } from '../store/leaderboardSlice';
@@ -12,9 +12,13 @@ import WelcomePage from './WelcomePage/WelcomePage';
 
 const App = () => {
   const dispatch = useDispatch<RootDispatch>();
+  const rerenderCheck = useRef<boolean>(true);
 
   useEffect(() => {
-    dispatch(fetchInitialState());
+    if (rerenderCheck.current) {
+      rerenderCheck.current = false;
+      dispatch(fetchInitialState());
+    }
   });
 
   return (
