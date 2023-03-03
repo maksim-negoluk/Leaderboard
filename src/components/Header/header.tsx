@@ -1,16 +1,15 @@
 import {
    HeaderBlock,
    LeaderboardLogo,
-   LeaderboardPageLink,
-   HomePageLink,
+   HeaderLink,
 } from './style';
 
 const Header = () => {
    return (
       <HeaderBlock>
          <LeaderboardLogo>Leaderboard</LeaderboardLogo>
-         <LeaderboardPageLink>Leaderboard</LeaderboardPageLink>
-         <HomePageLink>Home</HomePageLink>
+         <HeaderLink to="/leaderboard">Leaderboard</HeaderLink>
+         <HeaderLink to="/home">Home</HeaderLink>
       </HeaderBlock>
    )
 }

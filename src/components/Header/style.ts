@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const HeaderBlock = styled.div`
    box-sizing: border-box;
@@ -18,9 +19,11 @@ const LeaderboardLogo = styled.h2`
    flex-grow: 9;
 `
 
-const LeaderboardPageLink = styled.a`
+const HeaderLink = styled(Link)`
    font-size: 16px;
    text-align: right;
+   color: white;
+   text-decoration: none;
    flex-grow: 1;
    transition: 0.3s;
 
@@ -30,16 +33,4 @@ const LeaderboardPageLink = styled.a`
    }
 `
 
-const HomePageLink = styled.a`
-   font-size: 16px;
-   text-align: right;
-   flex-grow: 1;
-   transition: 0.3s;
-
-   &:hover {
-      cursor: pointer;
-      color: #dce0dd;
-   }
-`
-
-export { HeaderBlock, LeaderboardLogo, LeaderboardPageLink, HomePageLink }
+export { HeaderBlock, LeaderboardLogo, HeaderLink }
