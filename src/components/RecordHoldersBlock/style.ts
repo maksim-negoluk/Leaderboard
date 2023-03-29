@@ -42,20 +42,27 @@ const UserBlock = styled.div`
   text-align: center;
 `;
 
-const ProfilePicture = styled.div`
+const Profile = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: end;
   box-sizing: border-box;
   border-radius: 10px;
-  padding: 0 0 5px 0;
   height: 60px;
   width: 60px;
   background-color: #bbb8b8;
 `;
 
+const ProfilePicture = styled.img`
+  position: absolute;
+  margin-bottom: 10px;
+`
+
 const Score = styled.span`
+  position: absolute;
   display: inline-block;
+  font-size: 12px;
   border-radius: 5px;
   padding: 3px 5px;
   background-color: #f1efef;
@@ -67,4 +74,4 @@ const NickName = styled.span`
   font-size: 0.8rem;
 `;
 
-export { StyledBlock, Title, RecordHoldersList, UserBlock, ProfilePicture, Score, NickName };
+export { StyledBlock, Title, RecordHoldersList, UserBlock, Profile, ProfilePicture, Score, NickName };

@@ -3,6 +3,7 @@ interface IUserProps {
   place: string;
   score: number;
   nickname: string;
+  avatar: string;
   positionShift: string;
 }
 

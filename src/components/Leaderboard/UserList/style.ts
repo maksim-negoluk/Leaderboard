@@ -7,19 +7,19 @@ const lowerPlaceColor = `#ec2727`;
 
 const UserBlock = styled.div`
   display: grid;
-  grid-template-columns: 5% 5% 5% 15% 50% 15% 5%;
+  grid-template-columns: 5% 5% 5% 15% 50% 12% 4% 4%;
   align-items: center;
   padding: 0 20px 10px 20px;
   font-size: 0.9rem;
   @media screen and (max-width: 767px) {
-    grid-template-columns: 8% 8% 8% 18% 32% 18% 8%;
+    grid-template-columns: 8% 8% 8% 16% 28% 20% 6% 6%;
   }
   @media screen and (max-width: 500px) {
-    grid-template-columns: 10% 10% 10% 20% 20% 20% 10%;
+    grid-template-columns: 10% 10% 10% 20% 10% 26% 7% 7%;
     padding: 0 10px 10px 10px;
   }
   @media screen and (max-width: 425px) {
-    grid-template-columns: 13% 10% 13% 23% 0 30% 10%;
+    grid-template-columns: 13% 10% 13% 23% 0 26% 7% 7%;
     padding: 0 10px 10px 10px;
   }
 `;
@@ -28,7 +28,7 @@ const Place = styled.span`
   color: #bbbbbb;
 `;
 
-const ProfilePicture = styled.div`
+const ProfilePicture = styled.img`
   border-radius: 5px;
   height: 20px;
   width: 20px;
@@ -39,7 +39,11 @@ const Score = styled.span`
   font-weight: bold;
 `;
 
-const NickName = styled.span``;
+const NickName = styled.span`
+&:hover {
+  cursor: pointer;
+}
+`;
 
 const ScoreChange = styled.span<{ positionShift: string }>`
   display: flex;
@@ -76,4 +80,10 @@ const EditButton = styled.img`
 }
 `;
 
-export { UserBlock, Place, ProfilePicture, Score, NickName, ScoreChange, Arrow, EditButton };
+const DeleteButton = styled.img`
+&:hover {
+  cursor: pointer;
+}
+`;
+
+export { UserBlock, Place, ProfilePicture, Score, NickName, ScoreChange, Arrow, EditButton, DeleteButton };

@@ -28,15 +28,15 @@ const StyledModalWindow = styled.div`
 
 const CloseButton = styled.button`
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 10px;
+  left: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   border-radius: 50%;
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   color: ${blackColor};
   font-weight: bold;
 `;

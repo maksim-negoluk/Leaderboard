@@ -8,8 +8,8 @@ const Header = () => {
    return (
       <HeaderBlock>
          <LeaderboardLogo>Leaderboard</LeaderboardLogo>
-         <HeaderLink>Leaderboard</HeaderLink>
-         <HeaderLink>Home</HeaderLink>
+         <HeaderLink to="/leaderboard">Leaderboard</HeaderLink>
+         <HeaderLink to="/home">Home</HeaderLink>
       </HeaderBlock>
    )
 }
