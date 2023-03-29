@@ -18,7 +18,7 @@ const ControlPanel = () => {
   const historyState = useSelector((state: RootState) => state.leaderboard);
   const dispatch = useDispatch();
   const openModal = () => {
-    dispatch(ToggleModal({ modalConfiguration: { showModal: true } }));
+    dispatch(ToggleModal({ modalConfiguration: { showModal: true, showProfile: false } }));
   };
 
   const isFirst = historyState.currentHistoryIndex === 0;

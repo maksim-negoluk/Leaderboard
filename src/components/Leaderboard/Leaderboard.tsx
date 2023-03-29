@@ -17,6 +17,7 @@ const Leaderboard = () => {
           .map((user: IUser, index) => (
             <User
               place={convertNumberToPlace(index + 1)}
+              avatar={user.avatar}
               nickname={user.name}
               score={user.score}
               key={user.id}
@@ -24,10 +25,10 @@ const Leaderboard = () => {
               positionShift={
                 user.previousScore !== null
                   ? `${definePositionShift(
-                      [...users].map((userValue) => userValue.score),
-                      user.score,
-                      user.previousScore
-                    )}`
+                    [...users].map((userValue) => userValue.score),
+                    user.score,
+                    user.previousScore
+                  )}`
                   : 'new user'
               }
             />

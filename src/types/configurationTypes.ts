@@ -4,6 +4,7 @@ interface IConfiguration {
 
 interface IModalConfiguration {
   showModal: boolean;
+  showProfile: boolean;
   currentUserId?: string;
 }
 

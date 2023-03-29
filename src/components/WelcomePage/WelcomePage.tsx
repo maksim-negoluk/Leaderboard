@@ -7,6 +7,10 @@ import {
    WelcomePageImage,
 } from './style';
 
+const podium = require('../../static/podium.jpg');
+const prize = require('../../static/prize.png');
+const maintenance = require('../../static/maintenance.png');
+
 const WelcomePage = () => {
    return (
       <WelcomePageContent>
@@ -18,13 +22,13 @@ const WelcomePage = () => {
                   find a challange for yourself. We update data everyday to show your best results.
                   Find a new friend and motivate each other for the new achivements...
                </WelcomePageText>
-               <WelcomePageImage></WelcomePageImage>
+               <WelcomePageImage src={prize} />
             </InformationBlock>
          </ContentBlock>
          <ContentBlock>
             <BlockArticle>Tournament announcement</BlockArticle>
             <InformationBlock>
-               <WelcomePageImage></WelcomePageImage>
+               <WelcomePageImage src={podium} />
                <WelcomePageText>
                   We are announcing a tournament with valuable prizes.
                   It will last for two weeks from 25 September 2 a.m to 9 October 2 a.m.
@@ -41,7 +45,7 @@ const WelcomePage = () => {
                   After maintenance compensation would be given to the players
                   for the caused troubles...
                </WelcomePageText>
-               <WelcomePageImage></WelcomePageImage>
+               <WelcomePageImage src={maintenance} />
             </InformationBlock>
          </ContentBlock>
       </WelcomePageContent>

@@ -6,7 +6,8 @@ import Wrapper from './styles';
 import Header from './Header/header'
 import Leaderboard from './Leaderboard/Leaderboard';
 import RecordHoldersBlock from './RecordHoldersBlock/RecordHoldersBlock';
-import Modal from './AddUserModal/Modal';
+import Modal from './Modals/AddUserModal/Modal';
+import UserProfile from './Modals/UserProfileModal/UserProfileModal';
 import { RootDispatch } from '../store/store';
 import WelcomePage from './WelcomePage/WelcomePage';
 
@@ -27,7 +28,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<WelcomePage />} />
-        <Route path="/leaderboard" element={<><RecordHoldersBlock /><Leaderboard /><Modal /></>} />
+        <Route path="/leaderboard" element={<><RecordHoldersBlock /><Leaderboard /><Modal /><UserProfile /></>} />
       </Routes>
     </Wrapper>
   );

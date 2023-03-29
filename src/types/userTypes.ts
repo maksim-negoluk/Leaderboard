@@ -1,6 +1,7 @@
 interface IUser {
   id: string;
   name: string;
+  avatar: string;
   score: number;
   previousScore: number | null;
 }
@@ -17,4 +18,6 @@ interface IUserHistory {
 
 type IUserPayload = Omit<IUser, 'previousScore'>;
 
-export type { IUser, IUserList, IUserPayload, IUserHistory };
+type IUserData = Omit<IUserPayload, 'avatar'>
+
+export type { IUser, IUserList, IUserPayload, IUserHistory, IUserData };

@@ -1,9 +1,9 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import { RootDispatch, RootState } from '../../store/store';
-import { ToggleModal } from '../../store/configurationSlice';
-import { EditUser, fetchUserNickname, UpdateHistory } from '../../store/leaderboardSlice';
+import { RootDispatch, RootState } from '../../../store/store';
+import { ToggleModal } from '../../../store/configurationSlice';
+import { EditUser, fetchUserNickname, UpdateHistory } from '../../../store/leaderboardSlice';
 import {
   ModalBackground,
   StyledModalWindow,
@@ -14,7 +14,8 @@ import {
   ErrorMessage,
   AddUserButton
 } from './style';
-import { IUser } from '../../types/userTypes';
+import { IUser } from '../../../types/userTypes';
+import { randomAvatar } from '../../Leaderboard/UserList/UserIconsStyles';
 
 const Modal = () => {
   const [name, setName] = useState('');
@@ -47,7 +48,7 @@ const Modal = () => {
   }, [ModalConfiguration.showModal]);
 
   const closeModal = () => {
-    dispatch(ToggleModal({ modalConfiguration: { showModal: false, currentUserId: '' } }));
+    dispatch(ToggleModal({ modalConfiguration: { showModal: false, showProfile: false, currentUserId: '' } }));
   };
 
   const handleNicknameChange = (event: FormEvent<HTMLInputElement>) => {
@@ -69,7 +70,7 @@ const Modal = () => {
       if (ModalConfiguration.currentUserId) {
         await dispatch(EditUser({ name, score, id: ModalConfiguration.currentUserId }));
       } else {
-        await dispatch(fetchUserNickname({ id: nanoid(), score, name }));
+        await dispatch(fetchUserNickname({ id: nanoid(), score, name, avatar: randomAvatar() }));
       }
       closeModal();
       dispatch(UpdateHistory());

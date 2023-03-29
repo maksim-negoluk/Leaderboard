@@ -6,6 +6,7 @@ import {
   Title,
   RecordHoldersList,
   UserBlock,
+  Profile,
   ProfilePicture,
   Score,
   NickName
@@ -22,9 +23,10 @@ const RecordHoldersBlock = () => {
           .slice(0, 3)
           .map((user: IUser) => (
             <UserBlock key={user.id}>
-              <ProfilePicture>
+              <Profile>
+                <ProfilePicture src={user.avatar} />
                 <Score>{user.score}</Score>
-              </ProfilePicture>
+              </Profile>
               <NickName>{user.name}</NickName>
             </UserBlock>
           ))}
